@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
             {
                 Vector2 tapPos = touch.position;
 
-                // Ignorar tap en la esquina inferior izquierda (zona del joystick)
                 if (tapPos.x < 200 && tapPos.y < 200)
                     return;
 
@@ -79,7 +78,7 @@ public class PlayerController : MonoBehaviour
         GameObject bullet = Instantiate(projectilePrefab, shootPoint.position, lookRot);
         bullet.GetComponent<Rigidbody>().velocity = direction * 10f;
 
-        Invoke(nameof(ResetShoot), 0.2f); // evita que rote mientras dispara
+        Invoke(nameof(ResetShoot), 0.2f);
     }
 
 
