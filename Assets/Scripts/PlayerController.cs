@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
         transform.rotation = lookRot;
 
         GameObject bullet = Instantiate(projectilePrefab, shootPoint.position, lookRot);
-        bullet.GetComponent<Rigidbody>().velocity = direction * 10f;
+        bullet.GetComponent<Rigidbody>().velocity = direction * 20f;
 
         Invoke(nameof(ResetShoot), 0.2f);
     }
